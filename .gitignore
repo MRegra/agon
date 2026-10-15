@@ -1,0 +1,13 @@
+# build output
+target/
+*.class
+# local reference material (NOT published: original IST SIRS project + course material)
+reference/
+# server runtime state (ledger, keys) created by the demo/server
+storage/
+*.log
+# IDEs / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store

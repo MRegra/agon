@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>dev.sobatista.agon</groupId><artifactId>agon-parent</artifactId><version>0.1.0</version>
+  </parent>
+  <artifactId>agon-cli</artifactId>
+  <name>Agon CLI</name>
+  <description>The runnable part: an in-process demo that runs a whole competition — leaders publish challenges, hackers submit signed write-ups with Proof of Work, and the scoreboard is printed and verified.</description>
+
+  <dependencies>
+    <dependency><groupId>dev.sobatista.agon</groupId><artifactId>agon-core</artifactId></dependency>
+    <dependency><groupId>dev.sobatista.agon</groupId><artifactId>agon-server</artifactId></dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>dev.sobatista.agon.cli.AgonDemo</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

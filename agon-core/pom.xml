@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>dev.sobatista.agon</groupId><artifactId>agon-parent</artifactId><version>0.1.0</version>
+  </parent>
+  <artifactId>agon-core</artifactId>
+  <name>Agon Core</name>
+  <description>The domain and its security: signed canonical messages, vulnerability classes and challenges, Proof of Work, and the tamper-evident hash-chained scoreboard ledger with the reference arbiter.</description>
+</project>

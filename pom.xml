@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dev.sobatista.agon</groupId>
+  <artifactId>agon-parent</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+
+  <name>Agon</name>
+  <description>A tamper-evident, signed scoreboard for a capture-the-flag competition — signed write-ups, a PKI-backed arbiter, sequence-number replay protection, server-validated Proof of Work, and a hash-chained ledger anyone can verify.</description>
+  <url>https://github.com/MRegra/agon</url>
+  <licenses>
+    <license><name>Apache License, Version 2.0</name><url>https://www.apache.org/licenses/LICENSE-2.0</url></license>
+  </licenses>
+
+  <modules>
+    <module>agon-core</module>
+    <module>agon-server</module>
+    <module>agon-cli</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.version>5.11.4</junit.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId><artifactId>junit-bom</artifactId>
+        <version>${junit.version}</version><type>pom</type><scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>dev.sobatista.agon</groupId><artifactId>agon-core</artifactId><version>0.1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.sobatista.agon</groupId><artifactId>agon-server</artifactId><version>0.1.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><scope>test</scope></dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
+        <plugin><groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.5.0</version></plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
