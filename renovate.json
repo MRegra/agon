@@ -2,7 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>MRegra/fedora-workstation-scripts//renovate/default"],
   "description": [
-    "Scope mirrors the Dependabot config this replaces: Maven (root pom drives every module) and GitHub Actions."
+    "Scope mirrors the Dependabot config this replaces: Maven (root pom drives every module) and GitHub Actions.",
+    "dependencyDashboard is explicit here (the extended preset already sets it) so issue #9 stays enabled even if the shared preset changes.",
+    "agon-core and agon-server are this reactor's own modules, declared in the parent dependencyManagement for cross-module version pinning, not published to any registry; ignoreDeps stops Renovate from trying to look them up on every run (issue #9)."
   ],
-  "enabledManagers": ["maven", "github-actions"]
+  "enabledManagers": ["maven", "github-actions"],
+  "dependencyDashboard": true,
+  "ignoreDeps": ["dev.sobatista.agon:agon-core", "dev.sobatista.agon:agon-server"]
 }
